@@ -45,8 +45,8 @@ Below is an example of the format for video data files:
 The Vision Pro cameras are displaced in the $x$ coordinate, so baseline can be extracted by computing `abs(data["left_extrinsics"]["m03"] - data["right_extrinsics"]["m03"])`. Those seeking a more robust solution may choose to find the distance between the translation vectors of the cameras (4th column vector in the extrinsics).
 
 Point cloud coordinates can be computed by the following equation:
-$$
-\mathbf{P}_{\text{camera}} = 
+
+<img src="https://latex.codecogs.com/svg.image?\mathbf{P}_{\text{camera}} = 
 \begin{bmatrix}
     X \\ Y \\ Z
 \end{bmatrix}
@@ -55,23 +55,22 @@ $$
     \frac{u - c_x}{f_x} \\
     \frac{v - c_y}{f_y} \\
     1
-\end{bmatrix}
-$$
+\end{bmatrix}" /> 
+
 Where:
-$$
-E_L = \text{extrinsics matrix for the left camera} \\
-E_R = \text{extrinsics matrix for the right camera} \\
-\mathbf{t}_L = E_L[:, 4]\\
-\mathbf{t}_R = E_R[:, 4]\\
-u = \text{x pixel coordinate} \\
-v = \text{y pixel coordinate} \\
-K = \text{intrinsics matrix for the camera} \\
-f_x = K_{1,1}\\
-f_y = K_{2,2} \\
-c_x = K_{1,3} \\
-c_y = K_{2,3} \\
-d = \text{disparity (horizontal displacement of the pixel)}
-$$
+
+- <img src="https://latex.codecogs.com/svg.image?E_L = \text{extrinsics matrix for the left camera}"/>
+- <img src="https://latex.codecogs.com/svg.image?E_R = \text{extrinsics matrix for the right camera}"/>
+- <img src="https://latex.codecogs.com/svg.image?\mathbf{t}_L = E_L[:, 4]"/>
+- <img src="https://latex.codecogs.com/svg.image?\mathbf{t}_R = E_R[:, 4]"/>
+- <img src="https://latex.codecogs.com/svg.image?u = \text{x pixel coordinate}"/>
+- <img src="https://latex.codecogs.com/svg.image?v = \text{y pixel coordinate}"/>
+- <img src="https://latex.codecogs.com/svg.image?K = \text{intrinsics matrix for the camera}"/>
+- <img src="https://latex.codecogs.com/svg.image?f_x = K_{1,1}"/>
+- <img src="https://latex.codecogs.com/svg.image?f_y = K_{2,2}"/>
+- <img src="https://latex.codecogs.com/svg.image?c_x = K_{1,3}"/>
+- <img src="https://latex.codecogs.com/svg.image?c_y = K_{2,3}"/>
+- <img src="https://latex.codecogs.com/svg.image?d = \text{disparity (horizontal displacement of the pixel)}"/>
 
 ### Advice on Stereo Matching
 
