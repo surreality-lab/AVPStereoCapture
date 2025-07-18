@@ -46,7 +46,7 @@ The Vision Pro cameras are displaced in the $x$ coordinate, so baseline can be e
 
 Point cloud coordinates can be computed by the following equation:
 
-<img src="https://latex.codecogs.com/svg.image?\mathbf{P}_{\text{camera}} = 
+<img src="https://latex.codecogs.com/png.image?\dpi{200}\mathbf{P}_{\text{camera}} = 
 \begin{bmatrix}
     X \\ Y \\ Z
 \end{bmatrix}
@@ -59,18 +59,18 @@ Point cloud coordinates can be computed by the following equation:
 
 Where:
 
-- <img src="https://latex.codecogs.com/svg.image?E_L = \text{extrinsics matrix for the left camera}"/>
-- <img src="https://latex.codecogs.com/svg.image?E_R = \text{extrinsics matrix for the right camera}"/>
-- <img src="https://latex.codecogs.com/svg.image?\mathbf{t}_L = E_L[:, 4]"/>
-- <img src="https://latex.codecogs.com/svg.image?\mathbf{t}_R = E_R[:, 4]"/>
-- <img src="https://latex.codecogs.com/svg.image?u = \text{x pixel coordinate}"/>
-- <img src="https://latex.codecogs.com/svg.image?v = \text{y pixel coordinate}"/>
-- <img src="https://latex.codecogs.com/svg.image?K = \text{intrinsics matrix for the camera}"/>
-- <img src="https://latex.codecogs.com/svg.image?f_x = K_{1,1}"/>
-- <img src="https://latex.codecogs.com/svg.image?f_y = K_{2,2}"/>
-- <img src="https://latex.codecogs.com/svg.image?c_x = K_{1,3}"/>
-- <img src="https://latex.codecogs.com/svg.image?c_y = K_{2,3}"/>
-- <img src="https://latex.codecogs.com/svg.image?d = \text{disparity (horizontal displacement of the pixel)}"/>
+- <img src="https://latex.codecogs.com/png.image?\dpi{200}E_L = \text{extrinsics matrix for the left camera}"/>
+- <img src="https://latex.codecogs.com/png.image?\dpi{200}E_R = \text{extrinsics matrix for the right camera}"/>
+- <img src="https://latex.codecogs.com/png.image?\dpi{200}\mathbf{t}_L = E_L[:, 4]"/>
+- <img src="https://latex.codecogs.com/png.image?\dpi{200}\mathbf{t}_R = E_R[:, 4]"/>
+- <img src="https://latex.codecogs.com/png.image?\dpi{200}u = \text{x pixel coordinate}"/>
+- <img src="https://latex.codecogs.com/png.image?\dpi{200}v = \text{y pixel coordinate}"/>
+- <img src="https://latex.codecogs.com/png.image?\dpi{200}K = \text{intrinsics matrix for the camera}"/>
+- <img src="https://latex.codecogs.com/png.image?\dpi{200}f_x = K_{1,1}"/>
+- <img src="https://latex.codecogs.com/png.image?\dpi{200}f_y = K_{2,2}"/>
+- <img src="https://latex.codecogs.com/png.image?\dpi{200}c_x = K_{1,3}"/>
+- <img src="https://latex.codecogs.com/png.image?\dpi{200}c_y = K_{2,3}"/>
+- <img src="https://latex.codecogs.com/png.image?\dpi{200}d = \text{disparity (horizontal displacement of the pixel)}"/>
 
 ### Advice on Stereo Matching
 
