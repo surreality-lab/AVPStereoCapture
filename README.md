@@ -44,34 +44,6 @@ Below is an example of the format for video data files:
 
 The Vision Pro cameras are displaced in the $x$ coordinate, so baseline can be extracted by computing `abs(data["left_extrinsics"]["m03"] - data["right_extrinsics"]["m03"])`. Those seeking a more robust solution may choose to find the distance between the translation vectors of the cameras (4th column vector in the extrinsics).
 
-Point cloud coordinates can be computed by the following equation:
-
-<img src="https://latex.codecogs.com/png.image?\dpi{200}\mathbf{P}_{\text{camera}} = 
-\begin{bmatrix}
-    X \\ Y \\ Z
-\end{bmatrix}
-= \frac{f_x \cdot \left\| \mathbf{t}_L - \mathbf{t}_R \right\|}{d} \cdot
-\begin{bmatrix}
-    \frac{u - c_x}{f_x} \\
-    \frac{v - c_y}{f_y} \\
-    1
-\end{bmatrix}" /> 
-
-Where:
-
-- <img src="https://latex.codecogs.com/png.image?\dpi{200}E_L = \text{extrinsics matrix for the left camera}"/>
-- <img src="https://latex.codecogs.com/png.image?\dpi{200}E_R = \text{extrinsics matrix for the right camera}"/>
-- <img src="https://latex.codecogs.com/png.image?\dpi{200}\mathbf{t}_L = E_L[:, 4]"/>
-- <img src="https://latex.codecogs.com/png.image?\dpi{200}\mathbf{t}_R = E_R[:, 4]"/>
-- <img src="https://latex.codecogs.com/png.image?\dpi{200}u = \text{x pixel coordinate}"/>
-- <img src="https://latex.codecogs.com/png.image?\dpi{200}v = \text{y pixel coordinate}"/>
-- <img src="https://latex.codecogs.com/png.image?\dpi{200}K = \text{intrinsics matrix for the camera}"/>
-- <img src="https://latex.codecogs.com/png.image?\dpi{200}f_x = K_{1,1}"/>
-- <img src="https://latex.codecogs.com/png.image?\dpi{200}f_y = K_{2,2}"/>
-- <img src="https://latex.codecogs.com/png.image?\dpi{200}c_x = K_{1,3}"/>
-- <img src="https://latex.codecogs.com/png.image?\dpi{200}c_y = K_{2,3}"/>
-- <img src="https://latex.codecogs.com/png.image?\dpi{200}d = \text{disparity (horizontal displacement of the pixel)}"/>
-
 ### Advice on Stereo Matching
 
 We have been able to create the most accurate point clouds from Vision Pro captures using the [FoundationStereo model](https://nvlabs.github.io/FoundationStereo/) from NVIDIA. Using an inference batch size of 4, frames take ~1 second to process on an RTX A5000. Whenever the script to generate point clouds from these captures is cleaner, I can add it to the repository.
